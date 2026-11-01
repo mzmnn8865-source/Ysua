@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کارنامه کنکور - معین موسوی</title>
+    <!-- استفاده از فونت فارسی وزیرمتن برای شباهت بیشتر -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            background-color: #e0e0e0;
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .document {
+            background-color: #f5f6f8; /* رنگ کاغذ */
+            background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.05"/></svg>'); /* بافت ملایم کاغذ */
+            width: 900px;
+            padding: 30px 40px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            color: #222;
+            border-radius: 4px;
+        }
+
+        /* هدر */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .header-text {
+            text-align: center;
+            flex-grow: 1;
+            margin-top: 10px;
+        }
+
+        .header-text p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .header-text h1, .header-text h2, .header-text h3 {
+            margin: 2px 0;
+            font-size: 14px;
+        }
+
+        .header-text h3 {
+            font-weight: normal;
+            margin-top: 5px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border: 3px solid #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo svg {
+            width: 60px;
+            height: 60px;
+        }
+
+        /* بخش اطلاعات اصلی */
+        .main-info-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        /* عکس و اطلاعات سمت چپ */
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 35%;
+        }
+
+        .photo-box {
+            width: 100px;
+            height: 120px;
+            background-color: #333;
+            border: 1px solid #999;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 12px;
+            overflow: hidden;
+            position: relative;
+            top: -50px; /* برای قرارگیری در جای دقیق */
+        }
+        
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .academic-info {
+            font-size: 13px;
+            line-height: 1.8;
+            position: relative;
+            top: -60px;
+            right: 20px;
+        }
+
+        .academic-info div {
+            display: flex;
+            margin-bottom: 2px;
+        }
+        
+        .academic-info span:first-child {
+            width: 140px;
+            text-align: left;
+        }
+
+        /* اطلاعات شخصی سمت راست */
+        .right-section {
+            width: 40%;
+            font-size: 13px;
+            line-height: 1.8;
+            margin-top: 50px;
+        }
+
+        .personal-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 3px;
+        }
+
+        .info-label {
+            font-weight: normal;
+            margin-left: 5px;
+        }
+
+        .info-value {
+            font-weight: bold;
+        }
+
+        /* افکت تاری */
+        .blur {
+            filter: blur(4px);
+            background-color: #999;
+            color: transparent;
+            user-select: none;
+        }
+
+        /* نوار آبی وضعیت */
+        .status-bar {
+            background-color: #d6e4f0;
+            border: 1px solid #a3c2db;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #2b579a;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* جدول نمرات */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        th, td {
+            border: 1px solid #c0c0c0;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .score-row td {
+            background-color: #f9f9f9;
+            font-weight: bold;
+        }
+
+        /* جدول نمره کل */
+        .total-score-table {
+            margin-bottom: 0;
+        }
+        
+        .total-score-table th {
+            background-color: #e8e8e8;
+        }
+
+        .total-score-table td {
+            background-color: #f5f6f8;
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="document">
+    <!-- هدر -->
+    <div class="header">
+        <div class="logo">
+            <!-- شبیه‌سازی لوگوی سازمان سنجش با SVG -->
+            <svg viewBox="0 0 100 100" fill="none" stroke="black" stroke-width="6" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="10" width="80" height="80" />
+                <path d="M10 50 L50 10 L90 50 L50 90 Z" />
+                <path d="M30 30 L70 70" stroke-width="8"/>
+                <path d="M70 30 L30 70" stroke-width="8"/>
+            </svg>
+        </div>
+        <div class="header-text">
+            <p>بسمه تعالی</p>
+            <h1>وزارت علوم، تحقیقات و فناوری</h1>
+            <h2>سازمان سنجش آموزش کشور</h2>
+            <h3>کارنامه علمی ۱۴۰۲ نوبت دوم ( تیر ماه )</h3>
+        </div>
+        <div style="width: 80px;"></div> <!-- برای توازن در Flexbox -->
+    </div>
+
+    <!-- بخش اطلاعات -->
+    <div class="main-info-container">
+        <!-- سمت چپ (عکس و دیپلم) -->
+        <div class="left-section">
+            <div class="photo-box">
+                <!-- اینجا می‌توانید عکس خود را قرار دهید -->
+                <span style="color: #888;">عکس</span>
+            </div>
+            <div class="academic-info">
+                <div><span>- زبان خارجی:</span> <span>---</span></div>
+                <div><span>- عنوان دیپلم:</span> <span>11 | علوم تجربی</span></div>
+                <div><span>- تاریخ اخذ مدرک دیپلم:</span> <span>۱۴۰۵/۰۵/۰۱</span></div>
+                <div><span>- ناحیه اخذ مدرک دیپلم:</span> <span>مازندران - قائم شهر</span></div>
+                <div><span>- کد سوابق تحصیلی (۱۹ رقمی):</span> <span class="blur">1234567890123456789</span></div>
+            </div>
+        </div>
+
+        <!-- سمت راست (اطلاعات شخصی) -->
+        <div class="right-section">
+            <div class="personal-info">
+                <div class="info-row">
+                    <span class="info-label">- کد ملی:</span>
+                    <span class="info-value blur">1234567890</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">- نام:</span>
+                    <span class="info-value">معین</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">- نام خانوادگی:</span>
+                    <span class="info-value">موسوی</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">- نام پدر:</span>
+                    <span class="info-value">علی</span> <!-- نام پدر فرضی -->
+                </div>
+                <div class="info-row">
+                    <span class="info-label">- سال تولد:</span>
+                    <span class="info-value">۱۳۸۷</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">- جنسیت:</span>
+                    <span class="info-value">مرد</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- نوار وضعیت -->
+    <div class="status-bar">
+        علوم تجربی | وضعیت: حاضر | شماره داوطلبی: ۱۳۷۴۱۰۹
+    </div>
+
+    <!-- جدول نمرات دروس -->
+    <table>
+        <thead>
+            <tr>
+                <th style="width: 20%;">عنوان درس</th>
+                <th>زیست شناسی</th>
+                <th>فیزیک</th>
+                <th>شیمی</th>
+                <th>ریاضی</th>
+                <th>زمین شناسی</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="score-row">
+                <td>نمره خام</td>
+                <td>۹۰.۲۹</td>
+                <td>۷۵.۳۰</td>
+                <td>۹۱.۲۱</td>
+                <td>۴۹.۲۸</td>
+                <td>۸۴.۵۳</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- جدول نمره کل -->
+    <table class="total-score-table">
+        <thead>
+            <tr>
+                <th style="width: 50%;"># نمره کل آزمون اختصاصی (کنکور)</th>
+                <th style="width: 50%;">نمره کل سابقه تحصیلی (دریافتی از وزارت آموزش و پرورش)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>۱۴۰۷۱</td> <!-- نمره فرضی برای هماهنگی فرمت -->
+                <td>۱۱۱۰۲</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+              </html>
